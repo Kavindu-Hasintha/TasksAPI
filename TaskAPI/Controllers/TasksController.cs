@@ -17,7 +17,7 @@ namespace TaskAPI.Controllers
         [HttpGet] // Without this, it will raise an error
         public string[] Tasks()
         {
-            return new string[] { "Task 1", "Task 2", "Task 3" }; 
+            return new string[] { "Task 1", "Task 2", "Task 3", "Task 4" }; 
         }
         
         [HttpGet("GetAllTasks")]
