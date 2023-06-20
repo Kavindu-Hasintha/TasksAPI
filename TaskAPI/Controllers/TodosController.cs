@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using TaskAPI.Models;
 using TaskAPI.Services;
 
 namespace TaskAPI.Controllers
@@ -15,11 +14,12 @@ namespace TaskAPI.Controllers
     // ControllerBase - API walta ona request, response okkoma wenne
     public class TodosController : ControllerBase
     {
-        private TodoService _todoService;
+        private readonly ITodoRepository _todoService;
         // _ - private proprety inside the class
-        public TodosController()
+        public TodosController(ITodoRepository todoRepository)
         {
-            _todoService = new TodoService();
+            // Dependencies Injection
+            _todoService = todoRepository;
         }
 
         [HttpGet("{id?}")]
