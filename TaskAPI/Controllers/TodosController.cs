@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TaskAPI.Services;
+using TaskAPI.Services.Todos;
 
 namespace TaskAPI.Controllers
 {
     // Name it's better to use plural
     // Controller.cs is needed for ASP.net to identify wheather this is a controller or not
-   
+
     // Attributes
     [Route("api/[controller]")]
     [ApiController] // - tells ASP.Net to this is a API controller
@@ -27,12 +28,12 @@ namespace TaskAPI.Controllers
         {
             if (id == -1)
             {
-                return Ok(_todoService.AllTodos());
+                return Ok(_todoService.GetAllTodos());
             }
-            var myTodos = _todoService.AllTodos().Where(t => t.Id == id).ToList();
+            var myTodos = _todoService.GetAllTodos().Where(t => t.Id == id).ToList();
             return Ok(myTodos);
         }
 
-        
+
     }
 }

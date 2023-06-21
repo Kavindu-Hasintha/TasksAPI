@@ -1,4 +1,5 @@
-using TaskAPI.Services;
+using TaskAPI.Services.Authors;
+using TaskAPI.Services.Todos;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +11,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Dependencies Injection
-builder.Services.AddScoped<ITodoRepository, TodoService>();
+builder.Services.AddScoped<ITodoRepository, TodoRepository>();
+builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
 
 var app = builder.Build();
 
