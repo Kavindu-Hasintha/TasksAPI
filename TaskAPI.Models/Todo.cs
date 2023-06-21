@@ -11,5 +11,8 @@
         public TodoStatus Status { get; set; }
         // Usually, use an enum for status values.
 
+        public int AuthorId { get; set; }
+        public Author Author { get; set; }
+
     }
 }
