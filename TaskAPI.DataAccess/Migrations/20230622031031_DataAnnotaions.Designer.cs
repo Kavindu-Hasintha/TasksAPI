@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TaskAPI.DataAccess;
 
@@ -11,9 +12,10 @@ using TaskAPI.DataAccess;
 namespace TaskAPI.DataAccess.Migrations
 {
     [DbContext(typeof(TodoDbContext))]
-    partial class TodoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230622031031_DataAnnotaions")]
+    partial class DataAnnotaions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,11 +42,6 @@ namespace TaskAPI.DataAccess.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("JobRole")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(250)
@@ -65,7 +62,6 @@ namespace TaskAPI.DataAccess.Migrations
                             Id = 1,
                             AddressNo = "52",
                             City = "Colombo 1",
-                            JobRole = "Developer",
                             Name = "Nimal Ehan",
                             Street = "Street 1"
                         },
@@ -74,7 +70,6 @@ namespace TaskAPI.DataAccess.Migrations
                             Id = 2,
                             AddressNo = "42",
                             City = "Colombo 5",
-                            JobRole = "System Engineer",
                             Name = "Kamal Gamage",
                             Street = "Street 3"
                         },
@@ -83,7 +78,6 @@ namespace TaskAPI.DataAccess.Migrations
                             Id = 3,
                             AddressNo = "66",
                             City = "Colombo 3",
-                            JobRole = "Developer",
                             Name = "AB Dev",
                             Street = "Street 2"
                         },
@@ -92,7 +86,6 @@ namespace TaskAPI.DataAccess.Migrations
                             Id = 4,
                             AddressNo = "34",
                             City = "Colombo 2",
-                            JobRole = "QA",
                             Name = "Root Jo",
                             Street = "Street 5"
                         });
@@ -139,9 +132,9 @@ namespace TaskAPI.DataAccess.Migrations
                         {
                             Id = 1,
                             AuthorId = 1,
-                            Created = new DateTime(2023, 6, 25, 8, 43, 25, 118, DateTimeKind.Local).AddTicks(3642),
+                            Created = new DateTime(2023, 6, 22, 8, 40, 31, 642, DateTimeKind.Local).AddTicks(7145),
                             Description = "Test Description 1",
-                            Due = new DateTime(2023, 6, 30, 8, 43, 25, 118, DateTimeKind.Local).AddTicks(3651),
+                            Due = new DateTime(2023, 6, 27, 8, 40, 31, 642, DateTimeKind.Local).AddTicks(7155),
                             Status = 0,
                             Title = "Test1 - DB"
                         },
@@ -149,9 +142,9 @@ namespace TaskAPI.DataAccess.Migrations
                         {
                             Id = 2,
                             AuthorId = 4,
-                            Created = new DateTime(2023, 6, 25, 8, 43, 25, 118, DateTimeKind.Local).AddTicks(3655),
+                            Created = new DateTime(2023, 6, 22, 8, 40, 31, 642, DateTimeKind.Local).AddTicks(7159),
                             Description = "Test Description 2",
-                            Due = new DateTime(2023, 6, 28, 8, 43, 25, 118, DateTimeKind.Local).AddTicks(3655),
+                            Due = new DateTime(2023, 6, 25, 8, 40, 31, 642, DateTimeKind.Local).AddTicks(7160),
                             Status = 2,
                             Title = "Test2 - DB"
                         },
@@ -159,9 +152,9 @@ namespace TaskAPI.DataAccess.Migrations
                         {
                             Id = 3,
                             AuthorId = 3,
-                            Created = new DateTime(2023, 6, 25, 8, 43, 25, 118, DateTimeKind.Local).AddTicks(3656),
+                            Created = new DateTime(2023, 6, 22, 8, 40, 31, 642, DateTimeKind.Local).AddTicks(7161),
                             Description = "Test Description 3",
-                            Due = new DateTime(2023, 7, 3, 8, 43, 25, 118, DateTimeKind.Local).AddTicks(3657),
+                            Due = new DateTime(2023, 6, 30, 8, 40, 31, 642, DateTimeKind.Local).AddTicks(7161),
                             Status = 1,
                             Title = "Test3 - DB"
                         },
@@ -169,9 +162,9 @@ namespace TaskAPI.DataAccess.Migrations
                         {
                             Id = 4,
                             AuthorId = 2,
-                            Created = new DateTime(2023, 6, 25, 8, 43, 25, 118, DateTimeKind.Local).AddTicks(3658),
+                            Created = new DateTime(2023, 6, 22, 8, 40, 31, 642, DateTimeKind.Local).AddTicks(7162),
                             Description = "Test Description 4",
-                            Due = new DateTime(2023, 7, 10, 8, 43, 25, 118, DateTimeKind.Local).AddTicks(3658),
+                            Due = new DateTime(2023, 7, 7, 8, 40, 31, 642, DateTimeKind.Local).AddTicks(7163),
                             Status = 0,
                             Title = "Test4 - DB"
                         });

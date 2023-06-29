@@ -4,6 +4,11 @@ namespace TaskAPI.Services.Todos
 {
     public class TodoService : ITodoRepository
     {
+        public Todo AddTodo(int authorId, Todo todo)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Todo> AllTodos()
         {
             var todos = new List<Todo>();
@@ -42,6 +47,26 @@ namespace TaskAPI.Services.Todos
             todos.Add(todo3);
 
             return todos;
+        }
+
+        public void DeleteTodo(Todo todo)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Todo> GetAllTodos(int authorId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Todo GetTodo(int authorId, int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateTodo(Todo todo)
+        {
+            throw new NotImplementedException();
         }
     }
 }
